@@ -2,7 +2,8 @@ const jwt = require("jsonwebtoken")
 const  JWT_SECRET = process.env.JWT_SECRET
 
 function verifyToken(req,res,next){
-    const token = req.header("Authorization")
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(" ")[1]
     if(!token) {
         return res.status(401).json({
             error: "Authentication failed",
@@ -33,3 +34,6 @@ function verifyToken(req,res,next){
         })
     }
 }
+
+module.exports = verifyToken
+
