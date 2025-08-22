@@ -14,7 +14,7 @@ function verifyToken(req,res,next){
 
     try {
         const decoded = jwt.verify(token, JWT_SECRET)
-        req.userId = decoded.userId
+        req.user = decoded.user
         next()
     } catch(error){
         let errorMessage = "Invalid token"
