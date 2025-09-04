@@ -55,7 +55,9 @@ INSTALLATION AND USAGE
         npm run dev
 
 MAIN ENDPOINTS
-    Auth:
+
+
+        Auth:
         POST api/register
             body example:
             {
