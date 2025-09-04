@@ -3,7 +3,7 @@ const app = express()
 require("dotenv").config()
 const routes = require("./routes/index.js")
 
-port = process.env.PORT
+port = process.env.PORT || 3000
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
